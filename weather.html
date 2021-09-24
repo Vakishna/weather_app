@@ -4,18 +4,92 @@
     <meta charset="utf-8" />
     <title>Weather</title>
     <link rel="stylesheet" href="weather.css" />
+    <script src="vendor/jquery-3.6.0.js"></script>
  </head>
 <body>
 
     <div class="GeoContainer">
         <h1>Geolocation</h1>
-        <form action="/action_page.php">
-            <label for="latitude">Latitude</label>
-            <input type="text" id="latitude" name="latitude">
-            <label for="longitude">Longitude</label>
-            <input type="text" id="longitude" name="longitude">
-            <input type="submit" value="Get Weather">
-        </form>
+        <label for="latitude">Latitude</label>
+        <input type="text" id="latitude" name="latitude">
+        <label for="longitude">Longitude</label>
+        <input type="text" id="longitude" name="longitude">
+        <input type="button" value="Get Weather">
     </div>
+
+    <div class="ForcastContainer">
+        <h1>Forcast</h1>
+        <table>
+            <tr id="timeHeader">
+                <td id="blankCell"> </td>
+                <td>2 am</td>
+                <td>5 am</td>
+                <td>8 am</td>
+                <td>11 am</td>
+                <td>2 pm</td>
+                <td>5 pm</td>
+                <td>6 pm</td>
+                <td>11 pm</td>
+            </tr>
+            <tr>
+                <td>Wed</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+
+    <script src="geolocation.js"></script>
+
 </body>
 </html>
