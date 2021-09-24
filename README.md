@@ -2,7 +2,7 @@
 
 ## 1. Get your API keys
 
-Location IQ (Required by Geolocation Component): https://locationiq.com/
+Location IQ (Required by Geolocation Component): https://locationiq.com/  <br/>
 WeatherAPI (Required by Weather Component) https://www.weatherapi.com
 
 ## 2. Add environment variables: .env file. 
