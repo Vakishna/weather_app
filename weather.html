@@ -14,37 +14,26 @@
         <input type="text" id="latitude" name="latitude">
         <label for="longitude">Longitude</label>
         <input type="text" id="longitude" name="longitude">
-        <input type="button" value="Get Weather">
-        <p>Selected Location: <span id ="location"></span></p>
+        <input id="btnGetWeather" type="button" value="Get Weather">
+        <p>Selected Location: <span id="location"></span></p>
     </div>
 
     <div class="ForcastContainer">
         <h1>Forcast</h1>
-        <table>
+        <table id="forcastTable">
             <tr id="timeHeader">
-                <td id="blankCell"> </td>
-                <td>2 am</td>
-                <td>5 am</td>
-                <td>8 am</td>
-                <td>11 am</td>
-                <td>2 pm</td>
-                <td>5 pm</td>
+                <td id="blankCell"></td>
+                <td>12 am</td>
+                <td>3 am</td>
+                <td>6 am</td>
+                <td>9 am</td>
+                <td>12 pm</td>
+                <td>3 pm</td>
                 <td>6 pm</td>
-                <td>11 pm</td>
+                <td>9 pm</td>
             </tr>
             <tr>
-                <td>Wed</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
+                <td class="day">Wed</td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -55,18 +44,7 @@
                 <td></td>
             </tr>
             <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
+                <td class="day"></td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -77,7 +55,29 @@
                 <td></td>
             </tr>
             <tr>
+                <td class="day"></td>
                 <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="day"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="day"></td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -91,6 +91,8 @@
     </div>
 
     <script src="geolocation.js"></script>
+    <script src="weather.js"></script>
+
 
 </body>
 </html>

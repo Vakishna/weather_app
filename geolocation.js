@@ -5,8 +5,11 @@ Example Coords:
 -122.03118
 */
 
+
+// API PK
 var apiKey = "pk.a640e0113a33941722dfa49eed766c02"
 var lat = 0;
+var qLocation, qCity, qCountry;
 var long = 0;
 var uri = "https://us1.locationiq.com/v1/reverse.php?key=" + apiKey + "&lat=" + lat + "&lon=" + long + "&format=json";
 
@@ -18,8 +21,12 @@ $('#latitude').on('input', function () {
         url: uri,
         dataType: "text"
     }).done(function (response) {
-        var res = JSON.parse(response)
-        $("#location").text(res.address.city);
+        var res = JSON.parse(response);
+        console.log(JSON.parse(response));
+        qLocation = res.address.city + " " + res.address.state + " " + res.address.country;
+        qCity = res.address.city + "," + res.address.state;
+        qCountry = res.address.country_code;
+        $("#location").text(qLocation);
     }).fail(function () {
         $("#location").text("");
     });
@@ -35,7 +42,11 @@ $('#longitude').on('input', function () {
         dataType: "text"
     }).done(function (response) {
         var res = JSON.parse(response)
-        $("#location").text(res.address.city);
+        console.log(JSON.parse(response))
+        qLocation = res.address.city + " " + res.address.state + " " + res.address.country;
+        qCity = res.address.city + "," + res.address.state;
+        qCountry = res.address.country_code;
+        $("#location").text(qLocation);
     }).fail(function () {
         console.log("Error");
         $("#location").text("");
