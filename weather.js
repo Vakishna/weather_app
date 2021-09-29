@@ -1,10 +1,13 @@
 ﻿function plotChart(respArr) {
 
+
+    // TO-DO Update code to adjust to screen size
+
+
     var chart = document.getElementById("myCanvas");
     var ctx = chart.getContext("2d");
 
-    // One day = 160 (space of x) 
-    // 8 time points a day (160 / 8 = 20)
+    
     ctx.moveTo(160, 0);
     ctx.lineTo(160, 625);
     ctx.stroke();
@@ -27,7 +30,11 @@
 
         var dateTxt = new Date(respArr[i].dt_txt);
         var plotSegment = (current * 160) - 160;
-             
+
+        // One day = 160 (space of x) 
+        // 8 time points a day (160 / 8 = 20)
+
+
         if (i == 0) {
             dateTxt.toDateString();
             ctx.fillText(dateTxt.toDateString(), 5, 30);
