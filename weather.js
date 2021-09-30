@@ -45,35 +45,35 @@
             var plotX = plotSegment + 0;
             var plotY = 625 - (respArr[i].main.temp * 12.5)        
             ctx.fillText(dateTxt.toDateString(), plotSegment + 5, 30);
-            ctx.arc(plotX, plotY, 5, 0, 2 * Math.PI);
+            ctx.arc(plotX, plotY, 3, 0, 2 * Math.PI);
             ctx.stroke();
         }
 
         if (dateTxt.getHours() == 3) {
             var plotX = plotSegment + 20;
             var plotY = 625 - (respArr[i].main.temp * 12.5);
-            ctx.arc(plotX, plotY, 5, 0, 2 * Math.PI);
+            ctx.arc(plotX, plotY, 3, 0, 2 * Math.PI);
             ctx.stroke();
         }
 
         if (dateTxt.getHours() == 6) {
             var plotX = plotSegment + 40;
             var plotY = 625 - (respArr[i].main.temp * 12.5);
-            ctx.arc(plotX, plotY, 5, 0, 2 * Math.PI);
+            ctx.arc(plotX, plotY, 3, 0, 2 * Math.PI);
             ctx.stroke();
         }
 
         if (dateTxt.getHours() == 9) {
             var plotX = plotSegment + 60;
             var plotY = 625 - (respArr[i].main.temp * 12.5);
-            ctx.arc(plotX, plotY, 5, 0, 2 * Math.PI);
+            ctx.arc(plotX, plotY, 3, 0, 2 * Math.PI);
             ctx.stroke();
         }
 
         if (dateTxt.getHours() == 12) {
             var plotX = plotSegment + 80;
             var plotY = 625 - (respArr[i].main.temp * 12.5);
-            ctx.arc(plotX, plotY, 5, 0, 2 * Math.PI);
+            ctx.arc(plotX, plotY, 3, 0, 2 * Math.PI);
             ctx.stroke();
 
         }
@@ -81,21 +81,21 @@
         if (dateTxt.getHours() == 15) {
             var plotX = plotSegment + 100;
             var plotY = 625 - (respArr[i].main.temp * 12.5);
-            ctx.arc(plotX, plotY, 5, 0, 2 * Math.PI);
+            ctx.arc(plotX, plotY, 3, 0, 2 * Math.PI);
             ctx.stroke();
         }
 
         if (dateTxt.getHours() == 18) {
             var plotX = plotSegment + 120;
             var plotY = 625 - (respArr[i].main.temp * 12.5);
-            ctx.arc(plotX, plotY, 5, 0, 2 * Math.PI);
+            ctx.arc(plotX, plotY, 3, 0, 2 * Math.PI);
             ctx.stroke();
         }
 
         if (dateTxt.getHours() == 21) {
             var plotX = plotSegment + 140;
             var plotY = 625 - (respArr[i].main.temp * 12.5);
-            ctx.arc(plotX, plotY, 5, 0, 2 * Math.PI);
+            ctx.arc(plotX, plotY, 3, 0, 2 * Math.PI);
             ctx.stroke();   
             current++;
         }
@@ -151,6 +151,20 @@ function fillTable(respArr) {
     }
 }
 
+function geolocationSuccessCallback(position) {
+    $("#latitude").val(position.coords.latitude).trigger("input");
+    $("#longitude").val(position.coords.longitude).trigger("input");
+}
+
+
+function geolocationFailureCallback() {
+    alert("Unable to automatically detect location!");
+}
+
+
+
+
+
 $('#btnGetWeather').click(function () {
     var apiKeyWeather = "6c3091009f9f9e2d24f99ea2f8af350c";
     var uriWeather = "https://api.openweathermap.org/data/2.5/forecast?q=" + qCity + "&units=metric" + "&appid=" + apiKeyWeather;
@@ -167,4 +181,19 @@ $('#btnGetWeather').click(function () {
         alert("Error filling table!");
     });
    alert(uriWeather);
+});
+
+
+$("#btnDetectLocation").click(function () {
+    var positionOptions = {
+        enableHighAccuracy: true,
+        timeout: 10000,
+        maximumAge: 0
+    }
+
+    navigator.geolocation.getCurrentPosition(
+        geolocationSuccessCallback,
+        geolocationFailureCallback,
+        positionOptions
+    );
 });
