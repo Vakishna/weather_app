@@ -152,8 +152,11 @@ function fillTable(respArr) {
 }
 
 function geolocationSuccessCallback(position) {
-    $("#latitude").val(position.coords.latitude).trigger("input");
-    $("#longitude").val(position.coords.longitude).trigger("input");
+    $("#latitude").val(position.coords.latitude);
+    $("#longitude").val(position.coords.longitude);
+    $("#latitude").trigger("input");
+    $("#longitude").trigger("input");
+
 }
 
 
