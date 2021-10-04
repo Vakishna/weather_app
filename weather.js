@@ -116,57 +116,58 @@ function fillTable(respArr) {
         }
 
         if (dateTxt.getHours() == 0) {
+            var imgURI = "http://openweathermap.org/img/wn/" + respArr[i].weather[0].icon + "@2x.png"
             $("#d" + current + "day").text(dateTxt.toDateString());
             $("#d" + current + "0").text(respArr[i].main.temp);
+            $("#d" + current + "0img").empty().append("<img src=\"" + imgURI + "\" style=\"width: 75px\" />");
         }
 
         if (dateTxt.getHours() == 3) {
+            var imgURI = "http://openweathermap.org/img/wn/" + respArr[i].weather[0].icon + "@2x.png"
             $("#d" + current + "3").text(respArr[i].main.temp);
+            $("#d" + current + "3img").empty().append("<img src=\"" + imgURI + "\" style=\"width: 75px\" />");
         }
 
         if (dateTxt.getHours() == 6) {
+            var imgURI = "http://openweathermap.org/img/wn/" + respArr[i].weather[0].icon + "@2x.png"
             $("#d" + current + "6").text(respArr[i].main.temp);
+            $("#d" + current + "6img").empty().append("<img src=\"" + imgURI + "\" style=\"width: 75px\" />");
         }
 
         if (dateTxt.getHours() == 9) {
+            var imgURI = "http://openweathermap.org/img/wn/" + respArr[i].weather[0].icon + "@2x.png"
             $("#d" + current + "9").text(respArr[i].main.temp);
+            $("#d" + current + "9img").empty().append("<img src=\"" + imgURI + "\" style=\"width: 75px\" />");
         }
 
         if (dateTxt.getHours() == 12) {
+            var imgURI = "http://openweathermap.org/img/wn/" + respArr[i].weather[0].icon + "@2x.png"
             $("#d" + current + "12").text(respArr[i].main.temp);
+            $("#d" + current + "12img").empty().append("<img src=\"" + imgURI + "\" style=\"width: 75px\" />");
         }
 
         if (dateTxt.getHours() == 15) {
+            var imgURI = "http://openweathermap.org/img/wn/" + respArr[i].weather[0].icon + "@2x.png"
             $("#d" + current + "15").text(respArr[i].main.temp);
+            $("#d" + current + "15img").empty().append("<img src=\"" + imgURI + "\" style=\"width: 75px\" />");
+
         }
 
         if (dateTxt.getHours() == 18) {
+            var imgURI = "http://openweathermap.org/img/wn/" + respArr[i].weather[0].icon + "@2x.png"
             $("#d" + current + "18").text(respArr[i].main.temp);
+            $("#d" + current + "18img").empty().append("<img src=\"" + imgURI + "\" style=\"width: 75px\" />");
+            console.log(imgURI);
         }
 
         if (dateTxt.getHours() == 21) {
+            var imgURI = "http://openweathermap.org/img/wn/" + respArr[i].weather[0].icon + "@2x.png"
             $("#d" + current + "21").text(respArr[i].main.temp);
+            $("#d" + current + "21img").empty().append("<img src=\"" + imgURI + "\" style=\"width: 75px;\" />");
             current += 1;
         }
     }
 }
-
-function geolocationSuccessCallback(position) {
-    $("#latitude").val(position.coords.latitude);
-    $("#longitude").val(position.coords.longitude);
-    $("#latitude").trigger("input");
-    $("#longitude").trigger("input");
-
-}
-
-
-function geolocationFailureCallback() {
-    alert("Unable to automatically detect location!");
-}
-
-
-
-
 
 $('#btnGetWeather').click(function () {
     var apiKeyWeather = "6c3091009f9f9e2d24f99ea2f8af350c";
@@ -183,20 +184,6 @@ $('#btnGetWeather').click(function () {
         console.log("Weather Error" + response);
         alert("Error filling table!");
     });
-   alert(uriWeather);
 });
 
 
-$("#btnDetectLocation").click(function () {
-    var positionOptions = {
-        enableHighAccuracy: true,
-        timeout: 10000,
-        maximumAge: 0
-    }
-
-    navigator.geolocation.getCurrentPosition(
-        geolocationSuccessCallback,
-        geolocationFailureCallback,
-        positionOptions
-    );
-});

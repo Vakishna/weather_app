@@ -46,7 +46,7 @@ table {
     text-align: center;
 }
 
-
+/*
 td {
     padding-top: 5%;
     padding-bottom: 5%;
@@ -55,4 +55,16 @@ td {
     background-color: dodgerblue;
     border: 2.5px solid rgb(192,192,192);
 }
+*/
+
+td {
+    padding-top: 10px;
+    text-align: center;
+    width: 90px;
+    height: 125px;
+    padding-bottom: 10px;
+    background-color: dodgerblue;
+    border: 2.5px solid rgb(192,192,192);
+}
+
 
