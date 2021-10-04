@@ -101,37 +101,6 @@
     <script src="geolocation.js"></script>
     <script src="weather.js"></script>
 
-    <script>
-        // Initial Chart Fill
-        window.addEventListener('load', function () {
-            var chart = document.getElementById("myCanvas");
-            var ctx = chart.getContext("2d");
-
-            ctx.moveTo(0, 125);
-            ctx.lineTo(800, 125);
-            ctx.stroke();
-
-
-            ctx.moveTo(0, 250);
-            ctx.lineTo(800, 250);
-            ctx.stroke();
-
-            ctx.moveTo(0, 375);
-            ctx.lineTo(800, 375);
-            ctx.stroke();
-
-            ctx.moveTo(0, 500);
-            ctx.lineTo(800, 500);
-            ctx.stroke();
-
-            ctx.font = '14px serif';
-            ctx.fillText('40°', 0, 120);
-            ctx.fillText('30°', 0, 245);
-            ctx.fillText('20°', 0, 370);
-            ctx.fillText('10°', 0, 495);
-            ctx.fillText('0°', 0, 620);
-        });    
-    </script>
 
 
 </body>

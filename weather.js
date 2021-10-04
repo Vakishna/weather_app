@@ -1,13 +1,35 @@
-﻿function plotChart(respArr) {
-
-
-    // TO-DO Update code to adjust to screen size
-
+﻿function plotChart(respArr) {  
+    $("#myCanvas").remove();
+    $(".ChartContainer").append("<canvas id=\"myCanvas\" width=\"800\" height=\"625\" style=\"border: 1px solid #000000; background-color: #FFA07A; \">Your browser does not support the HTML canvas tag.</canvas >")
 
     var chart = document.getElementById("myCanvas");
     var ctx = chart.getContext("2d");
 
-    
+
+    ctx.moveTo(0, 125);
+    ctx.lineTo(800, 125);
+    ctx.stroke();
+
+
+    ctx.moveTo(0, 250);
+    ctx.lineTo(800, 250);
+    ctx.stroke();
+
+    ctx.moveTo(0, 375);
+    ctx.lineTo(800, 375);
+    ctx.stroke();
+
+    ctx.moveTo(0, 500);
+    ctx.lineTo(800, 500);
+    ctx.stroke();
+
+    ctx.font = '14px serif';
+    ctx.fillText('40°', 0, 120);
+    ctx.fillText('30°', 0, 245);
+    ctx.fillText('20°', 0, 370);
+    ctx.fillText('10°', 0, 495);
+    ctx.fillText('0°', 0, 620);
+
     ctx.moveTo(160, 0);
     ctx.lineTo(160, 625);
     ctx.stroke();
